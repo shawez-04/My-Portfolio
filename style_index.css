@@ -63,57 +63,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Hamburger Icon */
-#sidebar-toggle {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: #FFDEDE;
-}
-
-/* Sidebar */
-#sidebar {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 50vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  z-index: 2000;
-  transition: left 0.3s ease-in-out;
-}
-
-#sidebar.active {
-  left: 0;
-}
-
-#sidebar a {
-  color: #FFDEDE;
-  text-decoration: none;
-  font-size: 20px;
-  margin: 20px;
-  transition: color 0.3s;
-}
-
-#sidebar a:hover {
-  color: #FF0B55;
-}
-
-/* ===== Responsive Navbar ===== */
-@media (max-width: 768px) {
-  .header {
-    display: none;
-  }
-
-  #sidebar-toggle {
-    display: block;
-  }
-}
 
 /* ===== Buttons ===== */
 button {
@@ -305,60 +254,4 @@ button:hover {
   color: #FF0B55;
   text-shadow: 0 0 10px #FF0B55;
   transform: scale(1.2);
-}
-
-/* ===== Responsive Layout ===== */
-@media (max-width: 768px) {
-  #menu {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  #sidebar-toggle {
-    display: block;
-  }
-
-  .header {
-    display: none;
-  }
-
-  #sidebar.active {
-    display: flex;
-  }
-
-  .image-wrapper {
-    width: 250px;
-    height: 250px;
-    margin: 40px auto 0;
-  }
-
-  #image {
-    width: 220px;
-    height: 220px;
-    top: 15px;
-    left: 15px;
-  }
-
-  #textarea {
-    position: relative;
-    width: 90%;
-    top: 30px;
-    margin: 0 auto;
-  }
-
-  #textarea-glass {
-    padding: 30px;
-  }
-
-  #icons {
-    position: relative;
-    top: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  #footer {
-    position: relative;
-    margin-top: 50px;
-  }
 }

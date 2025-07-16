@@ -20,20 +20,7 @@
     <a href="projects.html">Projects</a>
     <a href="mailto:kshawez786@gmail.com">Contact</a>
   </div>
-
-  <!-- Hamburger Icon for Mobile -->
-  <div id="sidebar-toggle">&#9776;</div>
 </div>
-
-<!-- Sidebar for Mobile -->
-<div id="sidebar">
-  <a href="index.html">Home</a>
-  <a href="edu.html">Education</a>
-  <a href="skills.html">Skills</a>
-  <a href="projects.html">Projects</a>
-  <a href="mailto:kshawez786@gmail.com">Contact</a>
-</div>
-
  <!-- Image Wrapper -->
 <div class="image-wrapper">
   <!-- Rotating ring -->
@@ -100,24 +87,6 @@
     </div>
   </div>
 </footer>
-<script>
-  const sidebarToggle = document.getElementById("sidebar-toggle");
-  const sidebar = document.getElementById("sidebar");
-
-  sidebarToggle.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
-  });
-
-  // Optional: Close sidebar when clicking outside
-  document.addEventListener("click", function (event) {
-    if (
-      !sidebar.contains(event.target) &&
-      !sidebarToggle.contains(event.target)
-    ) {
-      sidebar.classList.remove("active");
-    }
-  });
-</script>
 <style>        
   html, body {
     min-height: 100vh;
