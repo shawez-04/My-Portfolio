@@ -1,0 +1,203 @@
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Amazon Ember", "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #FFDEDE;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  animation: fadeInBody 1s ease-in-out;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeInBody {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomInCard {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulseTitle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ===== Navbar ===== */
+#menu {
+  background-color: #FF0B55;
+  color: #FFDEDE;
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+#logo_menu {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.header {
+  display: flex;
+  gap: 25px;
+}
+
+.header a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.header a:hover,
+.header a.active {
+  color: #000;
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+/* ===== Projects Section ===== */
+#projects-section {
+  padding: 80px 20px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+#projects-section h1 {
+  font-size: 36px;
+  color: #FF0B55;
+  margin-bottom: 40px;
+  animation: pulseTitle 1.5s infinite;
+}
+
+/* ===== Project Grid ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Project Card ===== */
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  color: #FFDEDE;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  animation: zoomInCard 0.6s ease-in-out forwards;
+  opacity: 0;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #FF0B55;
+}
+
+.project-card h3 {
+  font-size: 20px;
+  color: #FF0B55;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-links {
+  margin-top: auto;
+}
+
+.project-links a {
+  color: #FFDEDE;
+  text-decoration: none;
+  font-size: 14px;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  color: #FF0B55;
+  text-shadow: 0 0 10px #FF0B55;
+}
+
+/* ===== Footer ===== */
+#footer {
+  width: 100%;
+  background-color: #000000;
+  color: #FFDEDE;
+  padding: 15px 0;
+  text-align: center;
+  border-top: 2px solid #FF0B55;
+  font-family: "Amazon Ember", sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 -4px 20px rgba(255, 11, 85, 0.2);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #FF0B55;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #FFDEDE;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #FF0B55;
+  text-shadow: 0 0 10px #FF0B55;
+  transform: scale(1.2);
+}
