@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style_index.css">
+    <title>My Portfolio</title>
+</head>
+<body>
+
+   <!-- Navigation Bar -->
+<div id="menu">
+  <div id="logo_menu">Portfolio</div>
+
+  <div class="header" id="desktop-menu">
+    <a href="index.html">Home</a>
+    <a href="edu.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="mailto:kshawez786@gmail.com">Contact</a>
+  </div>
+
+  <!-- Hamburger Icon for Mobile -->
+  <div id="sidebar-toggle">&#9776;</div>
+</div>
+
+<!-- Sidebar for Mobile -->
+<div id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="edu.html">Education</a>
+  <a href="skills.html">Skills</a>
+  <a href="projects.html">Projects</a>
+  <a href="mailto:kshawez786@gmail.com">Contact</a>
+</div>
+
+ <!-- Image Wrapper -->
+<div class="image-wrapper">
+  <!-- Rotating ring -->
+  <div class="rotating-border"></div>
+  <!-- Static profile image -->
+  <div id="image"></div>
+</div>
+
+<!--TEXT AREAs-->
+<div id="textarea">
+  <div id="textarea-glass">
+    <h3>Hey there!</h3>
+    <h1>I'm <span class="highlight">Shawez Khan</span></h1>
+
+    <p>
+      A curious mind in the world of <span class="highlight">technology & innovation</span>, I'm currently pursuing my B.Tech in 
+      <strong>Electronics & Communication Engineering</strong> at 
+      G.L. Bajaj Institute of Technology & Management.
+    </p>
+
+    <p>
+      With a strong foundation in circuits and systems, I'm also building my skills in <span class="highlight">frontend development</span> — 
+      creating clean, responsive, and user-centric interfaces that bring ideas to life.
+    </p>
+
+    <p>
+      I enjoy exploring the synergy between <span class="highlight">hardware logic</span> and <span class="highlight">digital design</span>. Whether it’s crafting circuits, designing web apps, or collaborating in hackathons, 
+      I thrive on <em>building solutions that matter</em>.
+    </p>
+
+    <p>
+      Currently, I’m polishing my frontend stack, diving into <span class="highlight">JavaScript</span> and mastering design tools like <span class="highlight">Canva & Figma</span>.
+      I’ve also led design initiatives, organized tech events, and mentored juniors in community-driven projects.
+    </p>
+
+    <p>
+      🚀 Always learning. 💡 Always building.<br>
+      Let’s connect and create something meaningful.
+    </p>
+
+    <div style="margin-top: 20px; display: flex; gap: 16px;">
+      <button onclick="location.href='mailto:kshawez786@gmail.com'">Let's Talk</button>
+      <button  onclick="location.href='resume.pdf'">Download Resume</button>
+    </div>
+
+    <p style="font-style: italic; margin-top: 40px;">— Shawez ✨</p>
+    <!--<div id="icons">
+        <a  href ="https://www.instagram.com/shawez_04/"><i class="fa-brands fa-instagram icons"></i></a>  
+        <a  href ="https://in.linkedin.com/in/mohd-shawez-khan-732840259"><i class="fa-brands fa-linkedin icons"></i></a>
+        <a  href ="https://github.com/shawez-04"><i class="fa-brands fa-github icons"></i></a>
+    </div>
+  </div>-->
+</div> 
+</div>
+
+ <footer id="footer">
+  <div class="footer-container">
+    <p class="footer-title">📬 Let's Connect</p>
+    <div class="footer-links">
+      <a href="mailto:kshawez786@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="tel:+918279967591"><i class="fa-solid fa-phone"></i> Call</a>
+      <a href="https://www.linkedin.com/in/mohd-shawez-khan/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/shawez-04" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</footer>
+<script>
+  const sidebarToggle = document.getElementById("sidebar-toggle");
+  const sidebar = document.getElementById("sidebar");
+
+  sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("active");
+  });
+
+  // Optional: Close sidebar when clicking outside
+  document.addEventListener("click", function (event) {
+    if (
+      !sidebar.contains(event.target) &&
+      !sidebarToggle.contains(event.target)
+    ) {
+      sidebar.classList.remove("active");
+    }
+  });
+</script>
+<style>        
+  html, body {
+    min-height: 100vh;
+  }
+</style>
+
+
+</body>
+</html>

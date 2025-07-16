@@ -1,0 +1,364 @@
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Amazon Ember", "Segoe UI", "Open Sans", sans-serif;
+}
+
+/* ===== Page Fade In ===== */
+body {
+  background-color: #000000;
+  color: #FFDEDE;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  animation: fadeInBody 1s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Navigation Menu ===== */
+#menu {
+  background-color: #FF0B55;
+  color: #FFDEDE;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  z-index: 1000;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#logo_menu {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.header {
+  display: flex;
+  gap: 25px;
+}
+
+.header a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.header a:hover {
+  color: #000000;
+  transform: scale(1.1);
+}
+
+/* Hamburger Icon */
+#sidebar-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #FFDEDE;
+}
+
+/* Sidebar */
+#sidebar {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 50vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  transition: left 0.3s ease-in-out;
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#sidebar a {
+  color: #FFDEDE;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 20px;
+  transition: color 0.3s;
+}
+
+#sidebar a:hover {
+  color: #FF0B55;
+}
+
+/* ===== Responsive Navbar ===== */
+@media (max-width: 768px) {
+  .header {
+    display: none;
+  }
+
+  #sidebar-toggle {
+    display: block;
+  }
+}
+
+/* ===== Buttons ===== */
+button {
+  background-color: #FF0B55;
+  border: none;
+  color: #FFDEDE;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #CF0F47;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 15px #FF0B55;
+  animation: pulse 0.4s ease-in-out;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* ===== Image Section ===== */
+.image-wrapper {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  margin-left: 150px;
+  margin-top: 150px;
+}
+
+.rotating-border {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  border: 15px solid #CF0F47;
+  border-top: 20px solid #FF0B55 ;
+  box-shadow: 0 0 70px 15px #3F2E3E;
+  animation: spin 2s linear infinite;
+}
+
+#image {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 490px;
+  height: 490px;
+  border-radius: 50%;
+  background: url("main-image.jpeg") center/cover no-repeat;
+  transition: transform 0.3s ease;
+}
+
+#image:hover {
+  transform: scale(1.03);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ===== Text Area ===== */
+#textarea {
+  position: absolute;
+  top: 110px;
+  right: 80px;
+  width: 750px;
+  z-index: 2;
+}
+
+#textarea-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 50px 60px;
+  box-shadow: 0 0 40px rgba(255, 11, 85, 0.3);
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#textarea-glass h3 {
+  font-size: 24px;
+  color: #CF0F47;
+  margin-bottom: 10px;
+}
+
+#textarea-glass h1 {
+  font-size: 40px;
+  color: #FF0B55;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+#textarea-glass p {
+  color: #FFDEDE;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.highlight {
+  color: #FF0B55;
+  font-weight: 700;
+}
+
+/* ===== Icons Section (Optional) ===== */
+#icons {
+  position: absolute;
+  width: 100%;
+  margin-left: 10px;
+  display: flex;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0;
+}
+
+.icons {
+  font-size: 32px;
+  color: #FFDEDE;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.icons:hover {
+  animation: bounce 0.5s ease-in-out;
+  color: #FF0B55;
+  text-shadow: 0 0 10px #FF0B55;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-5px); }
+}
+
+/* ===== Footer ===== */
+#footer {
+  width: 100%;
+  background-color: #000000;
+  color: #FFDEDE;
+  padding: 15px 0;
+  text-align: center;
+  border-top: 2px solid #FF0B55;
+  font-family: "Amazon Ember", sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 -4px 20px rgba(255, 11, 85, 0.2);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #FF0B55;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #FFDEDE;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #FF0B55;
+  text-shadow: 0 0 10px #FF0B55;
+  transform: scale(1.2);
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 768px) {
+  #menu {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #sidebar-toggle {
+    display: block;
+  }
+
+  .header {
+    display: none;
+  }
+
+  #sidebar.active {
+    display: flex;
+  }
+
+  .image-wrapper {
+    width: 250px;
+    height: 250px;
+    margin: 40px auto 0;
+  }
+
+  #image {
+    width: 220px;
+    height: 220px;
+    top: 15px;
+    left: 15px;
+  }
+
+  #textarea {
+    position: relative;
+    width: 90%;
+    top: 30px;
+    margin: 0 auto;
+  }
+
+  #textarea-glass {
+    padding: 30px;
+  }
+
+  #icons {
+    position: relative;
+    top: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #footer {
+    position: relative;
+    margin-top: 50px;
+  }
+}
