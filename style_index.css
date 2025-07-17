@@ -24,16 +24,14 @@ body {
 #menu {
   background-color: #FF0B55;
   color: #FFDEDE;
-  margin-top: 5px;
   display: flex;
+  margin-top: 5px;
   align-items: center;
   justify-content: space-between;
   padding: 15px 30px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
-  position: relative;
-  z-index: 1000;
   animation: slideDown 0.8s ease-in-out;
 }
 
