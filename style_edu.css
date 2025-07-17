@@ -1,17 +1,33 @@
-/* style_education.css */
-body {
+/* ===== Global Reset ===== */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Amazon Ember", sans-serif;
-  background-color: #000;
-  color: #FFDEDE;
-  overflow-x: hidden;
+  font-family: "Amazon Ember", "Segoe UI", "Open Sans", sans-serif;
 }
 
+/* ===== Page Fade In ===== */
+body {
+  background-color: #000000;
+  color: #FFDEDE;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  animation: fadeInBody 1s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Navigation Menu ===== */
 #menu {
   background-color: #FF0B55;
   color: #FFDEDE;
   display: flex;
+  width: 100%;
+  position:fixed;
+  z-index: 1000;
   margin-top: 5px;
   align-items: center;
   justify-content: space-between;
@@ -21,14 +37,15 @@ body {
   font-size: 14px;
   animation: slideDown 0.8s ease-in-out;
 }
+
 @keyframes slideDown {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 #logo_menu {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .header {
@@ -42,11 +59,9 @@ body {
   transition: all 0.3s ease;
 }
 
-.header a:hover,
-.header a.active {
-  color: #000;
+.header a:hover {
+  color: #000000;
   transform: scale(1.1);
-  font-weight: bold;
 }
 
 #education-section {
@@ -100,6 +115,23 @@ body {
 .edu-card .grade {
   font-size: 14px;
   color: #bbb;
+}
+
+@media screen and (max-width: 768px) {
+  
+  #menu {
+  padding: 15px 20px;
+  font-size: 12px;
+}
+
+
+#logo_menu {
+  font-size: 15px;
+}
+
+.header {
+  gap: 15px;
+}
 }
 
 /* ===== Footer ===== */

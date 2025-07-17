@@ -25,6 +25,9 @@ body {
   background-color: #FF0B55;
   color: #FFDEDE;
   display: flex;
+  width: 100%;
+  position:fixed;
+  z-index: 1000;
   margin-top: 5px;
   align-items: center;
   justify-content: space-between;
