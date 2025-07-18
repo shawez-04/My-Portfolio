@@ -186,16 +186,17 @@ body {
 }
 
 .project-links a {
-  color: #FFDEDE;
+  color: #CF0F47;
   text-decoration: none;
   font-size: 14px;
   margin-right: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease-in;
 }
 
 .project-links a:hover {
   color: #FF0B55;
-  text-shadow: 0 0 10px #FF0B55;
+  text-shadow: 0 0 20px #FF0B55;
+  font-weight: 800;
 }
 
 /* ===== Footer ===== */
