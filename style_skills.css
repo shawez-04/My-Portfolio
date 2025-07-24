@@ -103,7 +103,22 @@ body {
   color: var(--clr-primary-a0);
   transform: scale(1.1);
 }
+@media screen and (max-width: 768px) {
+  
+  #menu {
+  padding: 15px 20px;
+  font-size: 12px;
+}
 
+
+#logo_menu {
+  font-size: 15px;
+}
+
+.header {
+  gap: 15px;
+}
+}
 
 /* ===== Buttons ===== */
 button {
