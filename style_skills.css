@@ -6,12 +6,49 @@
   font-family: "Amazon Ember", "Segoe UI", "Open Sans", sans-serif;
 }
 
+:root {
+   --text-color: #FFFFFF;
+  --text-color-comp: #000000;
+  --clr-primary-a0:#261FB3;
+  --clr-primary-a1:#506ad3;
+  --clr-primary-a2:#5c6dc7;
+  --clr-primary-a3:#6c73af;
+  --clr-surface-a0:#121212;
+  --clr-surface-a1:#282828;
+  --clr-surface-a2:#3f3f3f;
+  --clr-surface-a3:#717171;
+  --clr-surface-a4:#000000;
+}
+
+.light-mode {
+  --text-color: #1A1A1A ;
+  --text-color-comp: #FFFFFF;
+  --clr-primary-a0:#261FB3;
+  --clr-primary-a1:#506ad3;
+  --clr-primary-a2:#5c6dc7;
+  --clr-primary-a3:#6c73af;
+  --clr-surface-a0:#ffffff;
+  --clr-surface-a1:#f0f0f0;
+  --clr-surface-a2:#e1e1e1;
+  --clr-surface-a3:#c5c5c5;
+  --clr-surface-a4:#eaf8ff;
+
+} 
+.theme-toggle {
+  background: var(--clr-primary-a0);
+  border: none;
+  font-size: 0.75rem;
+  cursor: pointer;
+  z-index: 9999;
+}
+
 /* ===== Page Fade In ===== */
 body {
-  background-color: #000000;
-  color: #FFDEDE;
+  background-color: var(--clr-surface-a4);
+  color: var(--text-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
+  transition: all 0.3s ease;
   animation: fadeInBody 1s ease-in-out;
 }
 
@@ -22,8 +59,8 @@ body {
 
 /* ===== Navigation Menu ===== */
 #menu {
-  background-color: #FF0B55;
-  color: #FFDEDE;
+  background-color: var(--clr-surface-a0);
+  color: var(--clr-primary-a2);
   display: flex;
   width: 100%;
   position:fixed;
@@ -35,7 +72,9 @@ body {
   border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
+  box-shadow:  0px 4px 10px 0px var(--clr-surface-a3);
   animation: slideDown 0.8s ease-in-out;
+  transition: color 0.2s ease;
 }
 
 @keyframes slideDown {
@@ -50,34 +89,48 @@ body {
 
 .header {
   display: flex;
+  align-items: center;
   gap: 25px;
 }
 
 .header a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .header a:hover {
-  color: #000000;
+  color: var(--clr-primary-a0);
   transform: scale(1.1);
 }
 
-@media screen and (max-width: 768px) {
-  #menu {
-  padding: 15px 20px;
+
+/* ===== Buttons ===== */
+button {
+  background-color: var(--clr-primary-a1);
+  border: none;
+  color: var(--text-color-comp);
+  border-radius: 8px;
+  padding: 6px 12px;
   font-size: 12px;
-}
-#logo_menu {
-  font-size: 15px;
-}
-
-.header {
-  gap: 15px;
-}
+  cursor: pointer;
+  box-shadow: 0 0 2px var(--clr-primary-a0);
+  transition: all 0.3s ease;
 
 }
+
+button:hover {
+  box-shadow: 0 0 15px var(--clr-primary-a0);
+  animation: pulse 0.4s ease-in-out;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
 
 #skills-section {
   padding: 80px 20px;
@@ -92,7 +145,7 @@ body {
 
 #skills-section h1 {
   font-size: 32px;
-  color: #FF0B55;
+  color: var(--clr-primary-a1);
   margin-bottom: 40px;
   animation: pulseTitle 1.5s infinite;
 }
@@ -112,12 +165,12 @@ body {
 }
 
 .skill-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--clr-surface-a4);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: var(--clr-primary-a3) 1px solid;
   border-radius: 12px;
   padding: 20px;
-  color: #FFDEDE;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,14 +186,14 @@ body {
 
 .skill-card:hover {
   transform: scale(1.25);
-  box-shadow: 0 0 15px #FF0B55;
+  box-shadow: 0 0 15px var(--clr-primary-a1);
   z-index: 10;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card i {
   font-size: 30px;
-  color: #FF0B55;
+  color: var(--clr-primary-a1);
   margin-bottom: 10px;
   animation: iconBounce 2s infinite;
 }
@@ -156,25 +209,20 @@ body {
 }
 
 #footer {
+  width: 100%;
+  background-color: var(--clr-surface-a0);
+  color: var(--text-color);
+  padding: 15px 0;
+  text-align: center;
+  border-top: 2px solid var(--clr-primary-a3);
+  font-family: "Amazon Ember", sans-serif;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
-  background-color: #000000;
-  color: #FFDEDE;
-  padding: 15px 0;
-  text-align: center;
-  border-top: 2px solid #FF0B55;
-  font-family: "Amazon Ember", sans-serif;
-  z-index: 9999;
-  box-shadow: 0 -4px 20px rgba(255, 11, 85, 0.2);
+  z-index: 10;
+  box-shadow: 0 -4px 20px rgba(64, 11, 255, 0.2);
 
-  /* Make sure nothing animates or delays rendering */
-  animation: none !important;
-  transform: none !important;
 }
-
-
 
 .footer-container {
   display: flex;
@@ -186,8 +234,8 @@ body {
 .footer-title {
   font-weight: 700;
   font-size: 16px;
-  margin-bottom: 6px;
-  color: #FF0B55;
+  margin-bottom: 5px;
+  color: var(--clr-primary-a1);
 }
 
 .footer-links {
@@ -198,14 +246,14 @@ body {
 }
 
 .footer-links a {
-  color: #FFDEDE;
+  color: inherit;
   text-decoration: none;
   font-size: 14px;
   transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #FF0B55;
-  text-shadow: 0 0 10px #FF0B55;
+  color: var(--clr-primary-a0);
+  text-shadow: 0 0 1px var(--clr-primary-a3);
   transform: scale(1.2);
 }
