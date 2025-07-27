@@ -14,7 +14,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 - Projects section with GitHub/demo links
 - Contact section with working email button
 - Fully responsive on all screen sizes
-
+- Dynamic Dark/Light mode layouts with toggle button.
 ---
 
 ## 🚀 Technologies Used
