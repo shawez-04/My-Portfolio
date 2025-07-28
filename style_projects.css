@@ -236,7 +236,7 @@ button:hover {
   box-shadow: 0 0 15px var(--clr-primary-a1);
 }
 
-.project-card h3 {
+.project-card h2 {
   font-size: 20px;
   color: var(--clr-primary-a1);
   margin-bottom: 10px;
